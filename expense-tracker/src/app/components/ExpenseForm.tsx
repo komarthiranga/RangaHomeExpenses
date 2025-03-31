@@ -1,7 +1,6 @@
 'use client'
-import React, { useState } from 'react';  
-import { Form, Input, Button, DatePicker } from 'antd';  
-import dayjs from 'dayjs';  
+import React from 'react';  
+import { Form, Input, Button, DatePicker } from 'antd';   
 
 export interface Expense {  
   date: string;  
@@ -16,6 +15,7 @@ interface ExpenseFormProps {
 const ExpenseForm: React.FC<ExpenseFormProps> = ({ onAddExpense }) => {  
   const [form] = Form.useForm();  
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any  
   const onFinish = (values: any) => {  
     const expense: Expense = {  
       date: values.date.format('YYYY-MM-DD'),  
